@@ -1,26 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SearchComponent from "./component/searchComponent/SearchComponent"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={
+      information: [],
+      query: ''
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hacker News API Search</h1>
+        <SearchComponent />
+      </div>
+    );
+  }
 }
 
 export default App;
